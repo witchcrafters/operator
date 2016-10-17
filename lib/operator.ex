@@ -62,7 +62,7 @@ defmodule Operator do
       #=> 3
 
   """
-  @spec def(any, nil | any) :: expression
+  @spec def(any, nil | any) :: any
   defmacro def(call, expr \\ nil) do
     quote do
       if @operator, do: defalias(call, as: @operator)
