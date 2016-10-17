@@ -33,7 +33,7 @@ defmodule Operator.Mixfile do
 
       docs: [
         extras: ["README.md"],
-        logo: "./brand/logo.png",
+        # logo: "./brand/logo.png",
         main: "readme"
       ]
     ]
