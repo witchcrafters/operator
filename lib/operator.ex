@@ -38,10 +38,12 @@ defmodule Operator do
   """
 
   defmacro __using__(_) do
-    import Kernel, except: [def: 2]
+    quote do
+      import Kernel, except: [def: 2]
 
-    require unquote(__MODULE__)
-    import  unquote(__MODULE__)
+      require unquote(__MODULE__)
+      import  unquote(__MODULE__)
+    end
   end
 
   @doc ~S"""
