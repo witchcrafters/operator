@@ -59,51 +59,51 @@ multiply(10, 2)
 
 # Operator Reference
 
-| Operator | Nullary | Unary              | Left-associated Binary | Right-associated Binary |
-|:--------:|:-------:|:------------------:|:----------------------:|:-----------------------:|
-| `!`      |         | :white_check_mark: |                        |                         |
-| `@`      |         | :white_check_mark: |                        |                         |
-| `.`      |         |                    | :white_check_mark:     |                         |
-| `..`     |         |                    |                        | :white_check_mark:      |
-| `+`      |         | :white_check_mark: | :white_check_mark:     |                         |
-| `++`     |         |                    |                        | :white_check_mark:      |
-| `-`      |         | :white_check_mark: | :white_check_mark:     |                         |
-| `--`     |         |                    |                        | :white_check_mark:      |
-| `*`      |         |                    | :white_check_mark:     |                         |
-| `/`      |         |                    | :white_check_mark:     |                         |
-| `^`      |         | :white_check_mark: |                        |                         |
-| `^^^`    |         |                    | :white_check_mark:     |                         |
-| `&`      |         | :white_check_mark: |                        |                         |
-| `&&`     |         |                    | :white_check_mark:     |                         |
-| `&&&`    |         |                    | :white_check_mark:     |                         |
-| `<-`     |         |                    | :white_check_mark:     |                         |
-| `\\`     |         |                    | :white_check_mark:     |                         |
-| `|`      |         |                    |                        | :white_check_mark:      |
-| `||`     |         |                    | :white_check_mark:     |                         |
-| `|||`    |         |                    | :white_check_mark:     |                         |
-| `=`      |         |                    |                        | :white_check_mark:      |
-| `=~`     |         |                    | :white_check_mark:     |                         |
-| `==`     |         |                    | :white_check_mark:     |                         |
-| `===`    |         |                    | :white_check_mark:     |                         |
-| `!=`     |         |                    | :white_check_mark:     |                         |
-| `!==`    |         |                    | :white_check_mark:     |                         |
-| `<`      |         |                    | :white_check_mark:     |                         |
-| `>`      |         |                    | :white_check_mark:     |                         |
-| `<>`     |         |                    |                        | :white_check_mark:      |
-| `<=`     |         |                    | :white_check_mark:     |                         |
-| `>=`     |         |                    | :white_check_mark:     |                         |
-| `|>`     |         |                    | :white_check_mark:     |                         |
-| `<|>`    |         |                    | :white_check_mark:     |                         |
-| `<~>`    |         |                    | :white_check_mark:     |                         |
-| `~>`     |         |                    | :white_check_mark:     |                         |
-| `~>>`    |         |                    | :white_check_mark:     |                         |
-| `>>>`    |         |                    | :white_check_mark:     |                         |
-| `<~`     |         |                    | :white_check_mark:     |                         |
-| `<<~`    |         |                    | :white_check_mark:     |                         |
-| `<<<`    |         |                    | :white_check_mark:     |                         |
-| `~~~`    |         | :white_check_mark: |                        |                         |
-| `when`   |         |                    |                        | :white_check_mark:      |
-| `in`     |         |                    | :white_check_mark:     |                         |
-| `and`    |         |                    | :white_check_mark:     |                         |
-| `or`     |         |                    | :white_check_mark:     |                         |
-| `not`    |         |                    | :white_check_mark:     |                         |
+| Operator | Unary              | Left-associated Binary | Right-associated Binary |
+|:--------:|:------------------:|:----------------------:|:-----------------------:|
+| `!`      | :white_check_mark: |                        |                         |
+| `@`      | :white_check_mark: |                        |                         |
+| `.`      |                    | :white_check_mark:     |                         |
+| `..`     |                    |                        | :white_check_mark:      |
+| `+`      | :white_check_mark: | :white_check_mark:     |                         |
+| `++`     |                    |                        | :white_check_mark:      |
+| `-`      | :white_check_mark: | :white_check_mark:     |                         |
+| `--`     |                    |                        | :white_check_mark:      |
+| `*`      |                    | :white_check_mark:     |                         |
+| `/`      |                    | :white_check_mark:     |                         |
+| `^`      | :white_check_mark: |                        |                         |
+| `^^^`    |                    | :white_check_mark:     |                         |
+| `&`      | :white_check_mark: |                        |                         |
+| `&&`     |                    | :white_check_mark:     |                         |
+| `&&&`    |                    | :white_check_mark:     |                         |
+| `<-`     |                    | :white_check_mark:     |                         |
+| `\\`     |                    | :white_check_mark:     |                         |
+| `|`      |                    |                        | :white_check_mark:      |
+| `||`     |                    | :white_check_mark:     |                         |
+| `|||`    |                    | :white_check_mark:     |                         |
+| `=`      |                    |                        | :white_check_mark:      |
+| `=~`     |                    | :white_check_mark:     |                         |
+| `==`     |                    | :white_check_mark:     |                         |
+| `===`    |                    | :white_check_mark:     |                         |
+| `!=`     |                    | :white_check_mark:     |                         |
+| `!==`    |                    | :white_check_mark:     |                         |
+| `<`      |                    | :white_check_mark:     |                         |
+| `>`      |                    | :white_check_mark:     |                         |
+| `<>`     |                    |                        | :white_check_mark:      |
+| `<=`     |                    | :white_check_mark:     |                         |
+| `>=`     |                    | :white_check_mark:     |                         |
+| `|>`     |                    | :white_check_mark:     |                         |
+| `<|>`    |                    | :white_check_mark:     |                         |
+| `<~>`    |                    | :white_check_mark:     |                         |
+| `~>`     |                    | :white_check_mark:     |                         |
+| `~>>`    |                    | :white_check_mark:     |                         |
+| `>>>`    |                    | :white_check_mark:     |                         |
+| `<~`     |                    | :white_check_mark:     |                         |
+| `<<~`    |                    | :white_check_mark:     |                         |
+| `<<<`    |                    | :white_check_mark:     |                         |
+| `~~~`    | :white_check_mark: |                        |                         |
+| `when`   |                    |                        | :white_check_mark:      |
+| `in`     |                    | :white_check_mark:     |                         |
+| `and`    |                    | :white_check_mark:     |                         |
+| `or`     |                    | :white_check_mark:     |                         |
+| `not`    |                    | :white_check_mark:     |                         |
