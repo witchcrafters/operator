@@ -80,10 +80,13 @@ defmodule Operator do
         :&&& -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :&&&)
 
         :<-  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<-)
+        :\\  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :\\)
         :::  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :::)
 
+        :=   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :=)
         :==  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :==)
         :!=  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :!=)
+        :=~  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :=~)
 
         :=== -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :===)
         :!== -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :!==)
@@ -110,6 +113,7 @@ defmodule Operator do
         :<~> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<~>)
         :<|> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<|>)
 
+        :^ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :^)
         :^^^ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :^^^)
         :<>  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<>)
 
@@ -127,6 +131,14 @@ defmodule Operator do
         :.   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :.)
         :..  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :..)
         :@   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :@)
+
+        :when   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :when)
+        :in   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :in)
+
+        :and   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :and)
+        :or   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :or)
+
+        :not   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :not)
       end
 
       Kernel.def(unquote(head), unquote(expr))
