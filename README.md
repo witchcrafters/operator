@@ -7,7 +7,7 @@
 ```elixir
 
 def deps do
-  [{:operator, "~> 0.0.1"}]
+  [{:operator, "~> 0.1.0"}]
 end
 
 defmodule MyModule do
@@ -33,11 +33,11 @@ defmodule Example do
   use Operator
 
   @doc "Divide two numbers"
-  @operator a ~> b
+  @operator :~>
   def divide(a, b), do: a / b
 
   @doc "Multiply two numbers"
-  @operator a <~> b
+  @operator :<~>
   def multiply(a, b), do: a * b
 end
 
