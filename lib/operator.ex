@@ -55,7 +55,7 @@ defmodule Operator do
 
   ## Examples
 
-      @operator x <~> y
+      @operator :<~>
       # ...
       def add(a, b), do: a + b
 
@@ -139,7 +139,7 @@ defmodule Operator do
 
   ## Examples
 
-      defalias(max, 2, as: :<|>)
+      defalias(:max, [], 2, as: :<|>)
 
       10 <|> 8
       #=> 10
