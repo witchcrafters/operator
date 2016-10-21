@@ -147,9 +147,8 @@ defmodule Operator do
   """
   defmacro defalias(_, _, _, as: nil), do: :ok
   defmacro defalias(fun_name, ctx, args, as: operator) do
-    quote do
-      defdelegate(unquote({operator, ctx, args}), to: __MODULE__, as: unquote(fun_name))
-    end
+    operator = {operator_symbol, ctx, args}
+    quote do: defdelegate(unquote(operator), to: __MODULE__, as: unquote(fun_name))
   end
 
   @spec get() :: nil | atom

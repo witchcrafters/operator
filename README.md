@@ -13,7 +13,7 @@ end
 defmodule MyModule do
   use Operator
 
-  @operator a ~> b
+  @operator :~>
   # ...
 end
 ```
