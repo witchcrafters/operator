@@ -56,3 +56,9 @@ multiply(10, 2)
 #=> 20
 
 ```
+
+# Operator Reference
+
+| Operator | Nullary | Unary              | Left-associated Binary | Right-associated Binary |
+|:--------:|:-------:|:------------------:|:----------------------:|:-----------------------:|
+| @        |         | :white_check_mark: |                        |                         |
