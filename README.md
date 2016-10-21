@@ -73,6 +73,7 @@ multiply(10, 2)
 | `/`      |                    | :white_check_mark:     |                         |
 | `^`      | :white_check_mark: |                        |                         |
 | `^^^`    |                    | :white_check_mark:     |                         |
+| `~~~`    | :white_check_mark: |                        |                         |
 | `&`      | :white_check_mark: |                        |                         |
 | `&&`     |                    | :white_check_mark:     |                         |
 | `&&&`    |                    | :white_check_mark:     |                         |
@@ -101,7 +102,6 @@ multiply(10, 2)
 | `<~`     |                    | :white_check_mark:     |                         |
 | `<<~`    |                    | :white_check_mark:     |                         |
 | `<<<`    |                    | :white_check_mark:     |                         |
-| `~~~`    | :white_check_mark: |                        |                         |
 | `when`   |                    |                        | :white_check_mark:      |
 | `in`     |                    | :white_check_mark:     |                         |
 | `and`    |                    | :white_check_mark:     |                         |
