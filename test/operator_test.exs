@@ -2,8 +2,6 @@ defmodule Operator.DocTest do
   use ExUnit.Case
   import Operator.Example
 
-  # doctest operator, [import: true]
-
   test "base" do
     assert add(1, 2) == 3
   end
@@ -13,6 +11,6 @@ defmodule Operator.DocTest do
   end
 
   test "the truth 2" do
-    # assert (10 <~> 2) == 20
+    assert (10 <~> 2) == 20
   end
 end

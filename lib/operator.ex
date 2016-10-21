@@ -9,25 +9,25 @@ defmodule Operator do
 
   ## Examples
 
-      iex> defmodule Example do
-      ...>   use Operator
-      ...>
-      ...>   @doc "Divide two numbers"
-      ...>   @operator :~>
-      ...>   def divide(a, b), do: a / b
-      ...>
-      ...>   @doc "Multiply two numbers"
-      ...>   @operator :<~>
-      ...>   def multiply(a, b), do: a * b
-      ...> end
-      ...>
-      ...> import Example
-      ...>
-      ...> divide(10, 5)
-      ...>  5
-      ...>
-      ...> 10 ~> 2
-      5
+      defmodule Example do
+        use Operator
+
+        @doc "Divide two numbers"
+        @operator :~>
+        def divide(a, b), do: a / b
+
+        @doc "Multiply two numbers"
+        @operator :<~>
+        def multiply(a, b), do: a * b
+      end
+
+      import Example
+
+      divide(10, 5)
+      #=> 5
+
+      10 ~> 2
+      #=> 5
 
       multiply(10, 2)
       #=> 20
