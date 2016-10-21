@@ -7,7 +7,7 @@ defmodule Operator.Mixfile do
       name: "Operator",
 
       description: "Helpers for defining operators",
-      version: "0.0.1",
+      version: "0.1.0",
       elixir:  "~> 1.3",
 
       package: [
