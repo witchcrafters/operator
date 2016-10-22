@@ -1,4 +1,4 @@
-![](./brand/logo.png)
+![](https://raw.githubusercontent.com/expede/operator/master/brand/logo.png)
 ## Helpers for defining Elixir operators
 
 [![Build Status](https://travis-ci.org/expede/operator.svg?branch=master)](https://travis-ci.org/expede/operator) [![Inline docs](http://inch-ci.org/github/expede/operator.svg?branch=master)](http://inch-ci.org/github/expede/operator) [![Deps Status](https://beta.hexfaktor.org/badge/all/github/expede/operator.svg)](https://beta.hexfaktor.org/github/expede/operator) [![hex.pm version](https://img.shields.io/hexpm/v/operator.svg?style=flat)](https://hex.pm/packages/operator) [![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](http://hexdocs.pm/operator/) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/expede/operator/blob/master/LICENSE)
