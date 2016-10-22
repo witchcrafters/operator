@@ -7,7 +7,7 @@
 ```elixir
 
 def deps do
-  [{:operator, "~> 0.1.0"}]
+  [{:operator, "~> 0.2.0"}]
 end
 
 defmodule MyModule do
