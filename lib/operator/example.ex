@@ -3,13 +3,13 @@ defmodule Operator.Example do
 
   use Operator
 
-  @doc "Operator alias definition"
   @operator :~>
+  @doc "Operator alias definition"
   @spec divide(number, number) :: number
   def divide(a, b), do: a / b
 
-  @doc "Unary operator"
   @operator :~~~
+  @doc "Unary operator"
   @spec negitive(number) :: number
   def negitive(e), do: -e
 
@@ -17,8 +17,8 @@ defmodule Operator.Example do
   @spec add(number, number) :: number
   def add(c, d), do: c + d
 
-  @doc "Example of a different operator"
   @operator :<~>
+  @doc "Example of a different operator"
   @spec multiply(number, number) :: number
   def multiply(x, y), do: x * y
 end
