@@ -67,78 +67,80 @@ defmodule Operator do
 
   """
   defmacro def(head, expr \\ nil) do
-    {fun_name, ctx, args} = head
+    {fun, ctx, args} = head
 
     quote do
-      # This is SO STUPID. Just brute forcing the problem for now. Need to revisit.
+      # This is SO STUPID. Just brute forcing the problem for now.
+      # Need to revisit.
       # The problem is that passing Operator.get to defalias (or defdelegate)
-      # tried to insert the *literal* Operator.get, rather than evaluating it first.
+      # tried to insert the *literal* Operator.get,
+      # rather than evaluating it first.
       # Same happens with anonymous functions.
       case Operator.get do
-        :&   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :&)
-        :&&  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :&&)
-        :&&& -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :&&&)
+        :&   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :&)
+        :&&  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :&&)
+        :&&& -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :&&&)
 
-        :<-  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<-)
-        :\\  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :\\)
-        :::  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :::)
+        :<-  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<-)
+        :\\  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :\\)
+        :::  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :::)
 
-        :=   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :=)
-        :==  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :==)
-        :!=  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :!=)
-        :=~  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :=~)
+        :=   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :=)
+        :==  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :==)
+        :!=  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :!=)
+        :=~  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :=~)
 
-        :=== -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :===)
-        :!== -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :!==)
+        :=== -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :===)
+        :!== -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :!==)
 
-        :|   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :|)
-        :||  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :||)
-        :||| -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :|||)
+        :|   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :|)
+        :||  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :||)
+        :||| -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :|||)
 
-        :>   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :>)
-        :<   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<)
-        :<=  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<=)
-        :>=  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :>=)
+        :>   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :>)
+        :<   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<)
+        :<=  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<=)
+        :>=  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :>=)
 
-        :|>  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :|>)
+        :|>  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :|>)
 
-        :~>  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :~>)
-        :~>> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :~>>)
-        :>>> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :>>>)
+        :~>  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :~>)
+        :~>> -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :~>>)
+        :>>> -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :>>>)
 
-        :<~  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<~)
-        :<<~ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<<~)
-        :<<< -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<<<)
+        :<~  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<~)
+        :<<~ -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<<~)
+        :<<< -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<<<)
 
-        :<~> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<~>)
-        :<|> -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<|>)
+        :<~> -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<~>)
+        :<|> -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<|>)
 
-        :^ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :^)
-        :^^^ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :^^^)
-        :<>  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :<>)
+        :^ -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :^)
+        :^^^ -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :^^^)
+        :<>  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :<>)
 
-        :+   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :+)
-        :++  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :++)
-        :-   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :-)
-        :--  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :--)
+        :+   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :+)
+        :++  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :++)
+        :-   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :-)
+        :--  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :--)
 
-        :*   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :*)
-        :/   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :/)
-        :!   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :!)
-        :^   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :^)
+        :*   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :*)
+        :/   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :/)
+        :!   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :!)
+        :^   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :^)
 
-        :~~~ -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :~~~)
-        :.   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :.)
-        :..  -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :..)
-        :@   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :@)
+        :~~~ -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :~~~)
+        :.   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :.)
+        :..  -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :..)
+        :@   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :@)
 
-        :when   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :when)
-        :in   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :in)
+        :when   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :when)
+        :in   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :in)
 
-        :and   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :and)
-        :or   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :or)
+        :and   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :and)
+        :or   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :or)
 
-        :not   -> defalias(unquote(fun_name), unquote(ctx), unquote(args), as: :not)
+        :not   -> defalias(unquote(fun), unquote(ctx), unquote(args), as: :not)
       end
 
       Kernel.def(unquote(head), unquote(expr))
@@ -158,9 +160,9 @@ defmodule Operator do
 
   """
   defmacro defalias(_, _, _, as: nil), do: :ok
-  defmacro defalias(fun_name, ctx, args, as: operator_symbol) do
+  defmacro defalias(fun, ctx, args, as: operator_symbol) do
     operator = {operator_symbol, ctx, args}
-    quote do: defdelegate(unquote(operator), to: __MODULE__, as: unquote(fun_name))
+    quote do: defdelegate(unquote(operator), to: __MODULE__, as: unquote(fun))
   end
 
   @spec get() :: nil | atom
