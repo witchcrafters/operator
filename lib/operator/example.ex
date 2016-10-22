@@ -10,8 +10,8 @@ defmodule Operator.Example do
 
   @operator :~~~
   @doc "Unary operator"
-  @spec negitive(number) :: number
-  def negitive(e), do: -e
+  @spec negative(number) :: number
+  def negative(e), do: -e
 
   @doc "Example of no operator"
   @spec add(number, number) :: number

@@ -16,7 +16,7 @@ defmodule Operator.DocTest do
   end
 
   test "Unary operators" do
-    assert ~~~6 == negitive(6)
+    assert ~~~6 == negative(6)
   end
 
   test "Operator is optional (can define normal function)" do
