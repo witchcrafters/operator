@@ -3,15 +3,23 @@ defmodule Operator.DocTest do
 
   import Operator.Example
 
-  test "base" do
-    assert add(1, 2) == 3
+  test "Named function is available" do
+    assert divide(1, 2) == 0.5
   end
 
-  test "the truth" do
-    assert (1 ~> 2) == 3
+  test "Operator functions the same as the named function" do
+    assert 1 ~> 2 == divide(1, 2)
   end
 
-  test "the truth 2" do
-    assert (10 <~> 2) == 20
+  test "Multiple functions with different aliases" do
+    assert (10 <~> 2) == multiply(10, 2)
+  end
+
+  test "Unary operators" do
+    assert ~~~6 == negitive(6)
+  end
+
+  test "Operator is optional (can define normal function)" do
+    assert add(5, 2) == 7
   end
 end

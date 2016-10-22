@@ -9,31 +9,31 @@ defmodule Operator do
 
   ## Examples
 
-  defmodule Example do
-  use Operator
+      defmodule Example do
+        use Operator
 
-  @doc "Divide two numbers"
-  @operator :~>
-  def divide(a, b), do: a / b
+        @doc "Divide two numbers"
+        @operator :~>
+        def divide(a, b), do: a / b
 
-  @doc "Multiply two numbers"
-  @operator :<~>
-  def multiply(a, b), do: a * b
-  end
+        @doc "Multiply two numbers"
+        @operator :<~>
+        def multiply(a, b), do: a * b
+      end
 
-  import Example
+      import Example
 
-  divide(10, 5)
-  #=> 5
+      divide(10, 5)
+      #=> 5
 
-  10 ~> 2
-  #=> 5
+      10 ~> 2
+      #=> 5
 
-  multiply(10, 2)
-  #=> 20
+      multiply(10, 2)
+      #=> 20
 
-  10 <~> 2
-  #=> 20
+      10 <~> 2
+      #=> 20
 
   """
 
@@ -55,22 +55,21 @@ defmodule Operator do
 
   ## Examples
 
-  @operator :<~>
-  # ...
-  def add(a, b), do: a + b
+      # ...
+      @operator :<~>
+      # ...
+      def add(a, b), do: a + b
 
-  add(1, 2)
-  #=> 3
+      add(1, 2)
+      #=> 3
 
-  1 <~> 2
-  #=> 3
+      1 <~> 2
+      #=> 3
 
   """
   defmacro def(fun_head, expr \\ nil) do
-    {fun, _ctx, args} = fun_head
-
     quote do
-      dispatch_alias(unquote(fun_head), Operator.get)
+      Operator.dispatch_alias(unquote(fun_head), Operator.get)
       Kernel.def(unquote(fun_head), unquote(expr))
       Operator.unset
     end
@@ -81,14 +80,14 @@ defmodule Operator do
 
   ## Examples
 
-  defalias(:max, [], 2, as: :<|>)
+      defalias(:max, [], 2, as: :<|>)
 
-  10 <|> 8
-  #=> 10
+      10 <|> 8
+      #=> 10
 
   """
   defmacro defalias(_fun_head, as: nil), do: :ok
-  defmacro defalias(fun_head, as: operator_symbol) do
+  defmacro defalias(fun_head,  as: operator_symbol) do
     {fun, ctx, args} = fun_head
     operator = {operator_symbol, ctx, args}
 
@@ -97,28 +96,34 @@ defmodule Operator do
     end
   end
 
+  @doc "Get the current value of `@operator`"
   @spec get() :: nil | atom
   defmacro get do
     quote do: Module.get_attribute(__MODULE__, :operator)
   end
 
+  @doc "Unset `@operator` to prevent operator name collisions"
   @spec unset() :: no_return
   defmacro unset do
     quote do: Module.put_attribute(__MODULE__, :operator, nil)
   end
 
+  @doc ~S"""
+  Workaround for `defdelegate` with variables in AST
+
+  This is an ABSURD workaround. Just brute forcing the problem for now.
+  Need to revisit, obviously.
+  Having difficulty interpolating `a ~> b` into `defdelegate` because
+  unquoting tries to fully evaluate what looks like a function call
+
+  The hope is that this function will be able to be removed completely,
+  hence isolating it here
+  """
   @lint false
   defmacro dispatch_alias(fun_head, operator_symbol) do
-    # This is an ABSURD workaround. Just brute forcing the problem for now.
-    # Need to revisit, obviously.
-    # Having difficulty interpolating `a ~> b` into `defdelegate` because
-    # unquoting tries to fully evaluate what looks like a function call
-
-    # The hope is that this function will be able to be removed completely,
-    # hence isolating it here
-
     quote do
       case unquote(operator_symbol) do
+        nil  -> :ok
         :&   -> defalias(unquote(fun_head), as: :&)
         :&&  -> defalias(unquote(fun_head), as: :&&)
         :&&& -> defalias(unquote(fun_head), as: :&&&)
