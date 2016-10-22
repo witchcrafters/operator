@@ -59,51 +59,60 @@ multiply(10, 2)
 
 # Operator Reference
 
+Elixir has a limited number of available operators. Many of them are already used
+by `Kernel` (the standard lib). You _can_ overwrite the standard definition
+by excluding it from the import of `Kernel`, but this is not advisable
+(except in very exceptional cases), because it can be very confusing for users.
+
+Some operators have multiple arities, and can be defined separately.
+Some binary operators associate to the left, and others to the right.
+Please refer to the table below.
+
 | Operator | Unary              | Left-associated Binary | Right-associated Binary |
 |:--------:|:------------------:|:----------------------:|:-----------------------:|
-| `!`      | :white_check_mark: |                        |                         |
-| `@`      | :white_check_mark: |                        |                         |
-| `.`      |                    | :white_check_mark:     |                         |
-| `..`     |                    |                        | :white_check_mark:      |
-| `+`      | :white_check_mark: | :white_check_mark:     |                         |
-| `++`     |                    |                        | :white_check_mark:      |
-| `-`      | :white_check_mark: | :white_check_mark:     |                         |
-| `--`     |                    |                        | :white_check_mark:      |
-| `*`      |                    | :white_check_mark:     |                         |
-| `/`      |                    | :white_check_mark:     |                         |
-| `^`      | :white_check_mark: |                        |                         |
-| `^^^`    |                    | :white_check_mark:     |                         |
-| `~~~`    | :white_check_mark: |                        |                         |
-| `&`      | :white_check_mark: |                        |                         |
-| `&&`     |                    | :white_check_mark:     |                         |
-| `&&&`    |                    | :white_check_mark:     |                         |
-| `<-`     |                    | :white_check_mark:     |                         |
-| `\\`     |                    | :white_check_mark:     |                         |
-| `|`      |                    |                        | :white_check_mark:      |
-| `||`     |                    | :white_check_mark:     |                         |
-| `|||`    |                    | :white_check_mark:     |                         |
-| `=`      |                    |                        | :white_check_mark:      |
-| `=~`     |                    | :white_check_mark:     |                         |
-| `==`     |                    | :white_check_mark:     |                         |
-| `===`    |                    | :white_check_mark:     |                         |
-| `!=`     |                    | :white_check_mark:     |                         |
-| `!==`    |                    | :white_check_mark:     |                         |
-| `<`      |                    | :white_check_mark:     |                         |
-| `>`      |                    | :white_check_mark:     |                         |
-| `<>`     |                    |                        | :white_check_mark:      |
-| `<=`     |                    | :white_check_mark:     |                         |
-| `>=`     |                    | :white_check_mark:     |                         |
-| `|>`     |                    | :white_check_mark:     |                         |
-| `<|>`    |                    | :white_check_mark:     |                         |
-| `<~>`    |                    | :white_check_mark:     |                         |
-| `~>`     |                    | :white_check_mark:     |                         |
-| `~>>`    |                    | :white_check_mark:     |                         |
-| `>>>`    |                    | :white_check_mark:     |                         |
-| `<~`     |                    | :white_check_mark:     |                         |
-| `<<~`    |                    | :white_check_mark:     |                         |
-| `<<<`    |                    | :white_check_mark:     |                         |
-| `when`   |                    |                        | :white_check_mark:      |
-| `in`     |                    | :white_check_mark:     |                         |
-| `and`    |                    | :white_check_mark:     |                         |
-| `or`     |                    | :white_check_mark:     |                         |
-| `not`    |                    | :white_check_mark:     |                         |
+| `!`      | :heavy_check_mark: |                        |                         |
+| `@`      | :heavy_check_mark: |                        |                         |
+| `.`      |                    | :heavy_check_mark:     |                         |
+| `..`     |                    |                        | :heavy_check_mark:      |
+| `+`      | :heavy_check_mark: | :heavy_check_mark:     |                         |
+| `++`     |                    |                        | :heavy_check_mark:      |
+| `-`      | :heavy_check_mark: | :heavy_check_mark:     |                         |
+| `--`     |                    |                        | :heavy_check_mark:      |
+| `*`      |                    | :heavy_check_mark:     |                         |
+| `/`      |                    | :heavy_check_mark:     |                         |
+| `^`      | :heavy_check_mark: |                        |                         |
+| `^^^`    |                    | :heavy_check_mark:     |                         |
+| `~~~`    | :heavy_check_mark: |                        |                         |
+| `&`      | :heavy_check_mark: |                        |                         |
+| `&&`     |                    | :heavy_check_mark:     |                         |
+| `&&&`    |                    | :heavy_check_mark:     |                         |
+| `<-`     |                    | :heavy_check_mark:     |                         |
+| `\\`     |                    | :heavy_check_mark:     |                         |
+| `|`      |                    |                        | :heavy_check_mark:      |
+| `||`     |                    | :heavy_check_mark:     |                         |
+| `|||`    |                    | :heavy_check_mark:     |                         |
+| `=`      |                    |                        | :heavy_check_mark:      |
+| `=~`     |                    | :heavy_check_mark:     |                         |
+| `==`     |                    | :heavy_check_mark:     |                         |
+| `===`    |                    | :heavy_check_mark:     |                         |
+| `!=`     |                    | :heavy_check_mark:     |                         |
+| `!==`    |                    | :heavy_check_mark:     |                         |
+| `<`      |                    | :heavy_check_mark:     |                         |
+| `>`      |                    | :heavy_check_mark:     |                         |
+| `<>`     |                    |                        | :heavy_check_mark:      |
+| `<=`     |                    | :heavy_check_mark:     |                         |
+| `>=`     |                    | :heavy_check_mark:     |                         |
+| `|>`     |                    | :heavy_check_mark:     |                         |
+| `<|>`    |                    | :heavy_check_mark:     |                         |
+| `<~>`    |                    | :heavy_check_mark:     |                         |
+| `~>`     |                    | :heavy_check_mark:     |                         |
+| `~>>`    |                    | :heavy_check_mark:     |                         |
+| `>>>`    |                    | :heavy_check_mark:     |                         |
+| `<~`     |                    | :heavy_check_mark:     |                         |
+| `<<~`    |                    | :heavy_check_mark:     |                         |
+| `<<<`    |                    | :heavy_check_mark:     |                         |
+| `when`   |                    |                        | :heavy_check_mark:      |
+| `in`     |                    | :heavy_check_mark:     |                         |
+| `and`    |                    | :heavy_check_mark:     |                         |
+| `or`     |                    | :heavy_check_mark:     |                         |
+| `not`    |                    | :heavy_check_mark:     |                         |
