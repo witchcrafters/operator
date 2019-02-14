@@ -28,7 +28,7 @@ defmodule Operator.Mixfile do
         {:earmark,  "~> 1.0",  only: :dev},
         {:ex_doc,   "~> 0.13", only: :dev},
 
-        {:inch_ex,  "~> 0.5",  only: [:dev, :docs, :test]}
+        {:inch_ex,  "~> 1.0",  only: [:dev, :docs, :test]}
       ],
 
       docs: [
