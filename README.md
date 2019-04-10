@@ -89,9 +89,9 @@ Please refer to the table below.
 | `&&&`    |                    | :heavy_check_mark:     |                         |
 | `<-`     |                    | :heavy_check_mark:     |                         |
 | `\\`     |                    | :heavy_check_mark:     |                         |
-| `|`      |                    |                        | :heavy_check_mark:      |
-| `||`     |                    | :heavy_check_mark:     |                         |
-| `|||`    |                    | :heavy_check_mark:     |                         |
+| `\|`     |                    |                        | :heavy_check_mark:      |
+| `\|\|`   |                    | :heavy_check_mark:     |                         |
+| `\|\|\|` |                    | :heavy_check_mark:     |                         |
 | `=`      |                    |                        | :heavy_check_mark:      |
 | `=~`     |                    | :heavy_check_mark:     |                         |
 | `==`     |                    | :heavy_check_mark:     |                         |
@@ -103,8 +103,8 @@ Please refer to the table below.
 | `<>`     |                    |                        | :heavy_check_mark:      |
 | `<=`     |                    | :heavy_check_mark:     |                         |
 | `>=`     |                    | :heavy_check_mark:     |                         |
-| `|>`     |                    | :heavy_check_mark:     |                         |
-| `<|>`    |                    | :heavy_check_mark:     |                         |
+| `\|>`    |                    | :heavy_check_mark:     |                         |
+| `<\|>`   |                    | :heavy_check_mark:     |                         |
 | `<~>`    |                    | :heavy_check_mark:     |                         |
 | `~>`     |                    | :heavy_check_mark:     |                         |
 | `~>>`    |                    | :heavy_check_mark:     |                         |
