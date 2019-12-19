@@ -124,70 +124,25 @@ defmodule Operator do
     quote do
       case unquote(operator_symbol) do
         nil  -> :ok
-        :&   -> defalias(unquote(fun_head), as: :&)
-        :&&  -> defalias(unquote(fun_head), as: :&&)
-        :&&& -> defalias(unquote(fun_head), as: :&&&)
 
-        :<-  -> defalias(unquote(fun_head), as: :<-)
-        :\\  -> defalias(unquote(fun_head), as: :\\)
-        :::  -> defalias(unquote(fun_head), as: :::)
-
-        :=   -> defalias(unquote(fun_head), as: :=)
-        :==  -> defalias(unquote(fun_head), as: :==)
-        :!=  -> defalias(unquote(fun_head), as: :!=)
-        :=~  -> defalias(unquote(fun_head), as: :=~)
-
-        :=== -> defalias(unquote(fun_head), as: :===)
-        :!== -> defalias(unquote(fun_head), as: :!==)
-
-        :|   -> defalias(unquote(fun_head), as: :|)
-        :||  -> defalias(unquote(fun_head), as: :||)
-        :||| -> defalias(unquote(fun_head), as: :|||)
-
-        :>   -> defalias(unquote(fun_head), as: :>)
-        :<   -> defalias(unquote(fun_head), as: :<)
-        :<=  -> defalias(unquote(fun_head), as: :<=)
-        :>=  -> defalias(unquote(fun_head), as: :>=)
-
-        :|>  -> defalias(unquote(fun_head), as: :|>)
-
-        :~>  -> defalias(unquote(fun_head), as: :~>)
-        :~>> -> defalias(unquote(fun_head), as: :~>>)
-        :>>> -> defalias(unquote(fun_head), as: :>>>)
-
-        :<~  -> defalias(unquote(fun_head), as: :<~)
-        :<<~ -> defalias(unquote(fun_head), as: :<<~)
-        :<<< -> defalias(unquote(fun_head), as: :<<<)
-
-        :<~> -> defalias(unquote(fun_head), as: :<~>)
-        :<|> -> defalias(unquote(fun_head), as: :<|>)
-
-        :^ -> defalias(unquote(fun_head), as: :^)
-        :^^^ -> defalias(unquote(fun_head), as: :^^^)
-        :<>  -> defalias(unquote(fun_head), as: :<>)
-
-        :+   -> defalias(unquote(fun_head), as: :+)
-        :++  -> defalias(unquote(fun_head), as: :++)
-        :-   -> defalias(unquote(fun_head), as: :-)
-        :--  -> defalias(unquote(fun_head), as: :--)
-
-        :*   -> defalias(unquote(fun_head), as: :*)
-        :/   -> defalias(unquote(fun_head), as: :/)
-        :!   -> defalias(unquote(fun_head), as: :!)
-        :^   -> defalias(unquote(fun_head), as: :^)
-
-        :~~~ -> defalias(unquote(fun_head), as: :~~~)
-        :.   -> defalias(unquote(fun_head), as: :.)
-        :..  -> defalias(unquote(fun_head), as: :..)
-        :@   -> defalias(unquote(fun_head), as: :@)
-
-        :when   -> defalias(unquote(fun_head), as: :when)
-        :in   -> defalias(unquote(fun_head), as: :in)
-
-        :and   -> defalias(unquote(fun_head), as: :and)
-        :or   -> defalias(unquote(fun_head), as: :or)
-
-        :not   -> defalias(unquote(fun_head), as: :not)
+        sym in ~w(
+          & && &&&
+          <- \\ ::
+          = == != =~
+          === !==
+          | || |||
+          > < <= >=
+          |>
+          ~> ~>> >>>
+          <~ <<~ <<<
+          <~> <|>
+          ^ ^^^ <>
+          + ++ - --
+          * / ! ^
+          ~~~ . .. @
+          when in and or not
+        )a ->
+          defalias(unquote(fun_head), as: sym)
       end
     end
   end
