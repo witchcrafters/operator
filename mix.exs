@@ -7,8 +7,8 @@ defmodule Operator.Mixfile do
       name: "Operator",
 
       description: "Helpers for defining operators",
-      version: "0.2.0",
-      elixir:  "~> 1.3",
+      version: "0.2.1",
+      elixir:  "~> 1.11",
 
       package: [
         maintainers: ["Brooklyn Zelenka"],
@@ -19,16 +19,21 @@ defmodule Operator.Mixfile do
       source_url:   "https://github.com/expede/operator",
       homepage_url: "https://github.com/expede/operator",
 
-      aliases: ["quality": ["test", "credo --strict"]],
+      aliases: [
+        quality: [
+          "test",
+          "credo --strict"
+        ]
+      ],
 
       deps: [
-        {:credo,    "~> 0.4",  only: [:dev, :test]},
+        {:credo,    "~> 1.5",  only: [:dev, :test], runtime: false},
 
-        {:dialyxir, "~> 0.3",  only: :dev},
-        {:earmark,  "~> 1.0",  only: :dev},
-        {:ex_doc,   "~> 0.13", only: :dev},
+        {:dialyxir, "~> 1.1",  only: :dev, runtime: false},
+        {:earmark,  "~> 1.4",  only: :dev, runtime: false},
+        {:ex_doc,   "~> 0.23", only: :dev, runtime: false},
 
-        {:inch_ex,  "~> 0.5",  only: [:dev, :docs, :test]}
+        {:inch_ex,  "~> 2.0",  only: [:dev, :docs, :test], runtime: false}
       ],
 
       docs: [

@@ -119,7 +119,7 @@ defmodule Operator do
   The hope is that this function will be able to be removed completely,
   hence isolating it here
   """
-  @lint false
+  # credo:disable-for-lines:71 Credo.Check.Refactor.CyclomaticComplexity
   defmacro dispatch_alias(fun_head, operator_symbol) do
     quote do
       case unquote(operator_symbol) do

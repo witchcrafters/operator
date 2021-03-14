@@ -1,5 +1,5 @@
 defmodule Operator.Example do
-  @moduledoc "Example for testing and teaching"
+  @moduledoc "Example for testing & teaching"
 
   use Operator
 
