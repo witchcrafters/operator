@@ -1,6 +1,6 @@
 defmodule Operator do
   @moduledoc ~S"""
-  Helpers for defining operator aliases for functions
+  Helpers for defining operator aliases for functions.
 
   Operators can be hard to follow, especially with the limited number available
   in Elixir. Always having a named function backing an operator makes it easy to
@@ -109,15 +109,16 @@ defmodule Operator do
   end
 
   @doc ~S"""
-  Workaround for `defdelegate` with variables in AST
+  Workaround for `defdelegate` with variables in AST.
 
   This is an ABSURD workaround. Just brute forcing the problem for now.
   Need to revisit, obviously.
+
   Having difficulty interpolating `a ~> b` into `defdelegate` because
   unquoting tries to fully evaluate what looks like a function call
 
   The hope is that this function will be able to be removed completely,
-  hence isolating it here
+  hence isolating it here.
   """
   # credo:disable-for-lines:71 Credo.Check.Refactor.CyclomaticComplexity
   defmacro dispatch_alias(fun_head, operator_symbol) do

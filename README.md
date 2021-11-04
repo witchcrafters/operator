@@ -1,14 +1,22 @@
 ![](https://raw.githubusercontent.com/expede/operator/master/brand/logo.png)
-## Helpers for defining Elixir operators
 
-[![Build Status](https://travis-ci.org/expede/operator.svg?branch=master)](https://travis-ci.org/expede/operator) [![Inline docs](http://inch-ci.org/github/expede/operator.svg?branch=master)](http://inch-ci.org/github/expede/operator) [![Deps Status](https://beta.hexfaktor.org/badge/all/github/expede/operator.svg)](https://beta.hexfaktor.org/github/expede/operator) [![hex.pm version](https://img.shields.io/hexpm/v/operator.svg?style=flat)](https://hex.pm/packages/operator) [![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](http://hexdocs.pm/operator/) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/expede/operator/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/expede/operator.svg?branch=master)](https://travis-ci.org/expede/operator)
+[![Module Version](https://img.shields.io/hexpm/v/operator.svg)](https://hex.pm/packages/operator)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/operator/)
+[![Total Download](https://img.shields.io/hexpm/dt/operator.svg)](https://hex.pm/packages/operator)
+[![License](https://img.shields.io/hexpm/l/operator.svg)](https://github.com/expede/operator/blob/master/LICENSE.md)
+[![Last Updated](https://img.shields.io/github/last-commit/expede/operator.svg)](https://github.com/expede/operator/commits/master)
 
-# Quick Start
+Helpers for defining operator aliases for functions.
+
+## Quick Start
 
 ```elixir
 
 def deps do
-  [{:operator, "~> 0.2.0"}]
+  [
+    {:operator, "~> 0.2.0"}
+  ]
 end
 
 defmodule MyModule do
@@ -19,7 +27,7 @@ defmodule MyModule do
 end
 ```
 
-# Summary
+## Summary
 
 Helpers for defining operator aliases for functions
 
@@ -58,7 +66,7 @@ multiply(10, 2)
 
 ```
 
-# Operator Reference
+## Operator Reference
 
 Elixir has a limited number of available operators. Many of them are already used
 by `Kernel` (the standard lib). You _can_ overwrite the standard definition
@@ -117,3 +125,11 @@ Please refer to the table below.
 | `and`    |                    | :heavy_check_mark:     |                         |
 | `or`     |                    | :heavy_check_mark:     |                         |
 | `not`    |                    | :heavy_check_mark:     |                         |
+
+
+## Copyright and License
+
+Copyright (c) 2016 Brooklyn Zelenka
+
+This work is free. You can redistribute it and/or modify it under the
+terms of the MIT License. See the [LICENSE.md](./LICENSE.md) file for more details.
